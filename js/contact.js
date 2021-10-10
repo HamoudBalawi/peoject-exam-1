@@ -58,3 +58,29 @@ function checkLength(value, len) {
     return false;
   }
 }
+
+const urlPost = "https://www.balawi.one/wp-json/contact-form-7/v1/contact-forms"
+form.addEventListener("submit", async (event)=>{
+event.preventDefault()
+const [name,subject, email, ,message] = event.target.elements;
+const data = JSON.stringify({
+   name: "name.value",
+      subject: "subject.value",
+       email: "email.value",
+        messsage: "message.value"
+      })
+ console.log(data, "data")
+
+try{
+  const response = await fetch(urlPost, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json","Authorization": "Bearer " + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd3d3LmJhbGF3aS5vbmUiLCJpYXQiOjE2MzM4MDY3MjcsIm5iZiI6MTYzMzgwNjcyNywiZXhwIjoxNjM0NDExNTI3LCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.OFyKbzKBk39g4zQOnNNXht0BxSs2Oz8gqD5UWaCVkqY"},
+  })
+  const json = await response.json();
+  console.log(json);
+}catch(error){
+  console.error(error)
+}
+})

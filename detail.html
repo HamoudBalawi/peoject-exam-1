@@ -26,12 +26,18 @@
     </header>
     <main>
       <h1 class="active active-background">Blog Post</h1>
-      <section class="single-post-container"></section>
+
       <section>
-        <form action="POST" class="form comment-form">
+        <div class="single-post-container"></div>
+        </div>
+      </section>
+      <section>
+        <form action="POST" class="form comment-form" >
+          <input type="hidden" id="post-id">
           <label for="text">Comments</label>
-          <textarea name="" id="" cols="50" rows="10"></textarea>
+          <textarea name="text" id="text" cols="50" rows="10"></textarea>
           <button type="submit" class="button cta-comment box-shadow">POST COMMENT</button>
+          <textarea name="text" id="text" cols="50" rows="30"></textarea>
         </form>
       </section>
     </main>

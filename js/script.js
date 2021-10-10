@@ -1,12 +1,10 @@
 const url = "https://balawi.one/wp-json/wp/v2/posts?per_page=12";
 const carousel = document.querySelector(".carousel");
-
 async function getPost() {
   try {
     const response = await fetch(url);
     const getResults = await response.json();
     createHTML(getResults);
-
     console.log(getResults);
   } catch (error) {
     console.log(error);
@@ -34,6 +32,7 @@ let translateX = 0;
 
 navButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
+
     if (event.target.id === "prev") {
       if (index !== 0) {
         index--;

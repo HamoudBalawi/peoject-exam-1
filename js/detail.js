@@ -1,5 +1,6 @@
 const detailsContainer = document.querySelector(".single-post-container");
 
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const postID = params.get("id");
@@ -16,12 +17,17 @@ async function fetchProduct() {
     const viewImage = document.querySelector(".animal-img");
     const closeImage = document.querySelector(".close-image");
     const detailsDiv = document.querySelector(".details-container");
+    const body       = document.querySelector("body");
     viewImage.onclick = function () {
       event.stopPropagation();
       detailsDiv.classList.add("view");
+      body.classList.add("background");
+     
     };
     closeImage.onclick = function () {
       detailsDiv.classList.remove("view");
+      body.classList.remove("background");
+   
     };
   } catch (error) {
     console.log(error);
