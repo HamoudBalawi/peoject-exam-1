@@ -42,6 +42,7 @@ function createHtml(details) {
                                      <img class="animal-img" src="${details.featured_media_src_url}" alt="${details.yoast_head_json.og_image[0].alt}"> 
                                      <p> ${details.content.rendered}</p>
                                      <p>Published ${details.date.slice(0, 10)}</P>
+                                   
                                      <a href=contact.html? class="button take-action box-shadow">TAkE ACTION</a>
                                   </div>
                                   `;
